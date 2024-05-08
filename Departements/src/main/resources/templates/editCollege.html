@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+
+<c:url value="/css/main.css" var="jstlCss" />
+<link href="${jstlCss}" rel="stylesheet" />
+<script type="text/javascript" src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1256">
+	<title>Modifier une college</title>
+</head>
+
+<body>
+	<div th:replace="~{template}"></div>
+
+	<div class="container">
+		<div class="card-body">
+			<form action="updateCollege" method="post">
+				<div class="form-group">
+								<label class="control-label">ID College :</label>
+								<input type="text" name="idcol"	th:field="${College.idcol}" readonly class="form-control" />
+							</div>
+				<div class="form-group">
+					<label class="control-label">Nom College :</label>
+					  <input type="text" th:field="${College.nomcol}" class="form-control" />
+				</div>
+				<div class="form-group">	
+					<label class="control-label">Ville College :</label>
+					   <input type="text" th:field="${College.villeCol}" class="form-control" />
+				</div>
+
+				<div>
+					<button type="submit" class="btn btn-primary">Modifier</button>
+				</div>
+			</form>
+		</div>
+		<br />
+		<br />
+		<a href="listCollege">Liste College</a>
+	</div>
+</body>
+
+</html>
